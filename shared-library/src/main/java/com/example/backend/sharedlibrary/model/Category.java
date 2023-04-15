@@ -17,9 +17,9 @@ public class Category {
     private Long CategoryId;
 
     @Column(nullable = false)
-    private String CategoryName;
+    private String name;
 
     public Category(String name){
-        this.CategoryName = name;
+        this.name = name;
     }
 }
