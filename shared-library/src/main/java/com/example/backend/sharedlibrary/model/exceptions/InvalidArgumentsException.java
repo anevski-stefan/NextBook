@@ -1,4 +1,4 @@
-package com.example.backend.model.exceptions;
+package com.example.backend.sharedlibrary.model.exceptions;
 
 public class InvalidArgumentsException extends RuntimeException{
     public InvalidArgumentsException() {

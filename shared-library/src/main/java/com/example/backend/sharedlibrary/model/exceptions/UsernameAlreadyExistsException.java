@@ -1,4 +1,4 @@
-package com.example.backend.model.exceptions;
+package com.example.backend.sharedlibrary.model.exceptions;
 
 public class UsernameAlreadyExistsException extends RuntimeException{
     public UsernameAlreadyExistsException(String username) {
