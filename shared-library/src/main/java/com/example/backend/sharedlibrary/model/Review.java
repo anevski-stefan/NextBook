@@ -21,9 +21,8 @@ public class Review {
     private User user;
 
     //TODO: Make sure reviews will be tied to books, not individual copies
-    @ManyToOne
     @JoinColumn(name = "ISBN", referencedColumnName = "ISBN")
-    private Book book;
+    private String ISBN;
 
     @Column(name = "score", nullable = false)
     private float score;
@@ -31,16 +30,16 @@ public class Review {
     @Column(name = "comment")
     private String comment;
 
-    public Review(User user, Book book, float score) {
+    public Review(User user, String ISBN, float score) {
         this.user = user;
-        this.book = book;
+        this.ISBN = ISBN;
         this.score = score;
         this.comment = "";
     }
 
-    public Review(User user, Book book, float score, String comment) {
+    public Review(User user, String ISBN, float score, String comment) {
         this.user = user;
-        this.book = book;
+        this.ISBN = ISBN;
         this.score = score;
         this.comment = comment;
     }
