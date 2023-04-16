@@ -7,6 +7,9 @@ import { Header } from "../Header/Header";
 import { BookRecommendation } from "../BookRecommendation/BookRecommendation";
 import { Footer } from "../Footer/Footer";
 import { BooksView } from "../BooksView/BooksView";
+import { Login } from "../Login/Login";
+import { Register } from "../Register/Register";
+import { AboutUs } from "../AboutUs/AboutUs";
 
 class App extends React.Component {
   constructor(props) {
@@ -39,6 +42,30 @@ class App extends React.Component {
               element={
                 <>
                   <BooksView />
+                </>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <>
+                  <Login />
+                </>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <>
+                  <Register />
+                </>
+              }
+            />
+            <Route
+              path="/aboutus"
+              element={
+                <>
+                  <AboutUs />
                 </>
               }
             />

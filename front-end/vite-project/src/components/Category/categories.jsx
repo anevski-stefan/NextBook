@@ -1,6 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
+const StyledCategory = styled.div`
+  background-color: #484545;
+  margin: 10px;
+  padding: 25px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 40%;
+  text-align: center;
+  color: #cacacb;
+`;
+
 const categories = (props) => {
   return (
     <div className="container">
@@ -21,27 +32,9 @@ const StyledTitle = styled.h1`
   margin: 80px;
 `;
 
-const styledWrapperContainer = styled.div`
-  .title {
-    width: 100%;
-    text-align: center;
-  }
-`;
-
 const StyledContainer = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
-`;
-
-const StyledCategory = styled.div`
-  background-color: #726d6d;
-  margin: 10px;
-  padding: 25px 25px;
-  width: 30%;
-  font-size: 1.7rem;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  flex-wrap: wrap;
 `;
