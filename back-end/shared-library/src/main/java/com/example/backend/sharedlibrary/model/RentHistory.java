@@ -23,9 +23,12 @@ public class RentHistory {
     private Book book;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     @Column(nullable = false)
 >>>>>>> 7248a73 (Add Waiting List model, repository, service and service implementation. Add Book repository, service and service implementation. Edit Book to add Author. Add Rent History repository, service and service implementation. Add BookRestController. Add RentHistoryController.)
+=======
+>>>>>>> 1881c7d (asd)
     private String ISBN;
 
     @ManyToOne
