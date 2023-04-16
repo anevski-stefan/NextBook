@@ -3,6 +3,7 @@ package com.example.backend.sharedlibrary.model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.apache.tomcat.jni.Local;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -21,11 +22,12 @@ public class RentHistory {
     @JoinColumn(name="BookID", referencedColumnName = "BookId")
     private Book book;
 
+    private String ISBN;
+
     @ManyToOne
     @JoinColumn(name = "UserID", referencedColumnName = "UserId")
     private User user;
 
-    @Column(nullable = false)
     private LocalDate dateRented;
 
     @Column
@@ -37,5 +39,15 @@ public class RentHistory {
         this.book = book;
         this.user = user;
         this.dateRented = LocalDate.now();
+        ISBN = book.getISBN();
+    }
+
+    // ???
+    public Object getDateReturned() {
+        return dateReturned;
+    }
+
+    public void setDateReturned(Object dateReturned) {
+        this.dateReturned = (LocalDate) dateReturned;
     }
 }
