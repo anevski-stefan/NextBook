@@ -16,7 +16,8 @@ public class Book {
     @Column(nullable = false)
     private String name;
 
-    //TODO: ADD VARIABLE THAT STORES BOOK AUTHOR
+    @Column(nullable = false)
+    private String Author;
 
     @Column(nullable = false)
     private String Author;

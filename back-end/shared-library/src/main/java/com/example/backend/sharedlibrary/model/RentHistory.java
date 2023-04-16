@@ -22,6 +22,10 @@ public class RentHistory {
     @JoinColumn(name="BookID", referencedColumnName = "BookId")
     private Book book;
 
+<<<<<<< HEAD
+=======
+    @Column(nullable = false)
+>>>>>>> 7248a73 (Add Waiting List model, repository, service and service implementation. Add Book repository, service and service implementation. Edit Book to add Author. Add Rent History repository, service and service implementation. Add BookRestController. Add RentHistoryController.)
     private String ISBN;
 
     @ManyToOne

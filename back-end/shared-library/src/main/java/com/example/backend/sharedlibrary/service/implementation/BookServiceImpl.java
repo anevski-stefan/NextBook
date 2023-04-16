@@ -1,8 +1,11 @@
 package com.example.backend.sharedlibrary.service.implementation;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class BookServiceImpl {
 =======
+=======
+>>>>>>> 7248a73 (Add Waiting List model, repository, service and service implementation. Add Book repository, service and service implementation. Edit Book to add Author. Add Rent History repository, service and service implementation. Add BookRestController. Add RentHistoryController.)
 import com.example.backend.sharedlibrary.model.Book;
 import com.example.backend.sharedlibrary.model.Category;
 import com.example.backend.sharedlibrary.model.User;
@@ -51,5 +54,8 @@ public class BookServiceImpl implements BookService {
     public List<Book> findCategory(Category category) {
         return bookRepository.findAllByCategoryLike(category);
     }
+<<<<<<< HEAD
 >>>>>>> 0a1b2b9f73634d1f93d1365cb97ce34d108fec76
+=======
+>>>>>>> 7248a73 (Add Waiting List model, repository, service and service implementation. Add Book repository, service and service implementation. Edit Book to add Author. Add Rent History repository, service and service implementation. Add BookRestController. Add RentHistoryController.)
 }
