@@ -1,15 +1,14 @@
 package com.example.backend.sharedlibrary.repository;
 
-import com.example.backend.sharedlibrary.model.Review;
 import com.example.backend.sharedlibrary.model.User;
+import com.example.backend.sharedlibrary.model.WaitingList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface ReviewRepository extends JpaRepository<Review, Long> {
-    List<Review> findAllByISBN(String ISBN);
-    List<Review> findAllByUser(User user);
-
+public interface WaitingListRepository extends JpaRepository<WaitingList, Long> {
+    List<WaitingList> findAllByUserLike(User user);
+    List<WaitingList> findAllByISBNLike(String ISBN);
 }
