@@ -13,6 +13,7 @@ import java.util.List;
 public interface RentHistoryRepository extends JpaRepository<RentHistory, Long> {
     List<RentHistory> findAllByUserLike(User user);
     List<RentHistory> findAllByBookLike(Book book);
+    List<RentHistory> findAllByISBNLike(String ISBN);
     List<RentHistory> findAllByDateRented(LocalDate dateRented);
     List<RentHistory> findAllByDateReturned(LocalDate dateReturned);
 }
