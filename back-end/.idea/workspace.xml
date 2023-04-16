@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75bffd6f-7dc8-40fd-8b8b-d72ad63e208e" name="Changes" comment="" />
+    <list default="true" id="75bffd6f-7dc8-40fd-8b8b-d72ad63e208e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front-end/src/components/main/BookCategories.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end/src/components/main/BookCategories.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +20,9 @@
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -38,12 +46,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Stefan/Desktop/Hackathon23-team/back-end"
+    "last_opened_file_path": "C:/Users/Stefan/Desktop/Hackathon23-team/back-end",
+    "spring.configuration.checksum": "68db666fba28d72ed03f329cf7a0cc62"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="BookSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="lab2" />
+      <option name="ACTIVE_PROFILES" />
+      <module name="sharedlibrary" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.backend.sharedlibrary.BookSystemApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -59,6 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1681597994525</updated>
       <workItem from="1681597997124" duration="1292000" />
+      <workItem from="1681608457635" duration="3511000" />
     </task>
     <servers />
   </component>
