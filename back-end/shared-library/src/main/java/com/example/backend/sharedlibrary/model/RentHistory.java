@@ -22,14 +22,12 @@ public class RentHistory {
     @JoinColumn(name="BookID", referencedColumnName = "BookId")
     private Book book;
 
-    @Column(nullable = false)
     private String ISBN;
 
     @ManyToOne
     @JoinColumn(name = "UserID", referencedColumnName = "UserId")
     private User user;
 
-    @Column(nullable = false)
     private LocalDate dateRented;
 
     @Column
