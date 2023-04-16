@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="75bffd6f-7dc8-40fd-8b8b-d72ad63e208e" name="Changes" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../front-end/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front-end/src/App.js" afterDir="false" />
@@ -15,6 +16,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared-library/src/main/java/com/example/backend/sharedlibrary/model/RentHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-library/src/main/java/com/example/backend/sharedlibrary/model/RentHistory.java" afterDir="false" />
 >>>>>>> 0a1b2b9f73634d1f93d1365cb97ce34d108fec76
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_6_7_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared-library/src/main/java/com/example/backend/sharedlibrary/model/RentHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared-library/src/main/java/com/example/backend/sharedlibrary/model/RentHistory.java" afterDir="false" />
+>>>>>>> 3186bff (Zxczx)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +50,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RequestMappingsPanelOrder0": "0",
@@ -72,6 +79,21 @@
   }
 }</component>
 >>>>>>> 0a1b2b9f73634d1f93d1365cb97ce34d108fec76
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Stefan/Desktop/Hackathon23-team/back-end&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;68db666fba28d72ed03f329cf7a0cc62&quot;
+  }
+}</component>
+>>>>>>> 3186bff (Zxczx)
   <component name="RunManager">
     <configuration name="BookSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
