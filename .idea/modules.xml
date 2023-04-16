@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Hackathon23-team-backend.iml" filepath="$PROJECT_DIR$/.idea/Hackathon23-team-backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/back-end/shared-library/lab2.iml" filepath="$PROJECT_DIR$/back-end/shared-library/lab2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back-end/shared-library/NextBook.iml" filepath="$PROJECT_DIR$/back-end/shared-library/NextBook.iml" />
     </modules>
   </component>
 </project>
