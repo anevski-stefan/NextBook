@@ -11,29 +11,54 @@ export function BooksView() {
   const [books, setBooks] = useState([]);
   const [showDetails, setShowDetails] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [count, setCount] = useState(10);
+  const searchTerms = [
+    "fiction",
+    "non-fiction",
+    "mystery",
+    "romance",
+    "science fiction",
+    "fantasy",
+  ];
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://openlibrary.org/search.json?q=javascript&limit=10"
-      );
-      const data = await response.json();
-      setBooks(data.docs);
-    };
+    if (modalOpen) {
+      document.body.classList.add("disable-scroll");
+    } else {
+      document.body.classList.remove("disable-scroll");
+    }
+  }, [modalOpen]);
 
-    fetchData();
+  useEffect(() => {
+    fetchData(0);
   }, []);
+
+  const fetchData = async (offset) => {
+    const searchTerm =
+      searchTerms[Math.floor(Math.random() * searchTerms.length)];
+
+    const response = await fetch(
+      `https://openlibrary.org/search.json?q=${searchTerm}&limit=10&offset=${offset}`
+    );
+    const data = await response.json();
+    setBooks([...books, ...data.docs]);
+  };
 
   const handleSeeMore = (book) => {
     setSelectedBook(book);
     setShowDetails(true);
+  };
+  const handleLoadMore = () => {
+    setCount(count + 10);
+    fetchData(count);
   };
 
   return (
     <>
       <StyledBooksView>All books</StyledBooksView>
       <StyledBoxWrapper>
-        {books.map((book) => (
+        {books.slice(0, count).map((book) => (
           <StyledBox key={book.key} onClick={() => handleSeeMore(book)}>
             <div className="book-image">
               {book.cover_i ? (
@@ -58,13 +83,17 @@ export function BooksView() {
                   >
                     See more
                   </button>
-                  <button className="borrow">Borrow</button>
                 </div>
               </div>
             </div>
           </StyledBox>
         ))}
       </StyledBoxWrapper>
+      <div>
+        <button className="loadMoreBtn" onClick={handleLoadMore}>
+          Load more ...
+        </button>
+      </div>
       {selectedBook && (
         <BookDetails
           book={selectedBook}
@@ -78,6 +107,20 @@ export function BooksView() {
 const StyledBooksView = styled.h1`
   text-align: center;
   margin: 60px;
+
+  .disable-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  .loadMoreBtn {
+    padding: 5px 30px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-align: center;
+  }
 `;
 
 const StyledBox = styled.div`
@@ -102,8 +145,7 @@ const StyledBox = styled.div`
     width: 100%;
   }
 
-  .seeMore,
-  .borrow {
+  .seeMore {
     margin: 3px;
     margin-top: 10px;
     padding: 5px 15px;
@@ -121,12 +163,19 @@ const StyledBookDetails = styled.div`
   justify-content: center;
   align-items: center;
 
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .details-container {
     background-color: white;
     padding: 20px;
-    max-width: 800px;
+    max-width: 400px;
     width: 80%;
     border-radius: 5px;
+    display: flex;
 
     .book-image {
       width: 30%;
@@ -139,6 +188,10 @@ const StyledBookDetails = styled.div`
 
     .book-info {
       width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
 
       h2 {
         font-size: 24px;
@@ -159,8 +212,7 @@ const StyledBookDetails = styled.div`
       }
     }
 
-    .closeBtnModal,
-    .borrowBtnModal {
+    .closeBtnModal {
       margin: 3px;
       margin-top: 10px;
       padding: 7px 20px;
@@ -172,27 +224,30 @@ function BookDetails({ book, onClose }) {
   return (
     <StyledBookDetails>
       <div className="details-container">
-        <div className="book-image">
-          {book.cover_i ? (
-            <img
-              src={`http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
-              alt={book.title}
-            />
-          ) : (
-            <p>No cover image available</p>
-          )}
-        </div>
-        <div className="book-info">
-          <h2>{book.title}</h2>
-          <p>by {book.author_name ? book.author_name.join(", ") : "Unknown"}</p>
-          {book.description && (
-            <p className="description">{book.description}</p>
-          )}
-          <div className="buttons">
-            <button className="borrowBtnModal">Borrow</button>
-            <button className="closeBtnModal" onClick={onClose}>
-              Close
-            </button>
+        <div className="wrapper">
+          <div className="book-image">
+            {book.cover_i ? (
+              <img
+                src={`http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
+                alt={book.title}
+              />
+            ) : (
+              <p>No cover image available</p>
+            )}
+          </div>
+          <div className="book-info">
+            <h2>{book.title}</h2>
+            <p>
+              by {book.author_name ? book.author_name.join(", ") : "Unknown"}
+            </p>
+            {book.description && (
+              <p className="description">{book.description}</p>
+            )}
+            <div className="buttons">
+              <button className="closeBtnModal" onClick={onClose}>
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>

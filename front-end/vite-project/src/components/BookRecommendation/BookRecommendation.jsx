@@ -1,57 +1,109 @@
 import styled from "styled-components";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function BookRecommendation() {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://openlibrary.org/api/books?bibkeys=ISBN:0451526538,ISBN:059035342X,ISBN:0141439564&format=json&jscmd=data"
+      )
+      .then((response) => {
+        const booksData = Object.values(response.data).map((book) => {
+          return {
+            title: book.title,
+            author: book.authors[0].name,
+            image: book.cover.medium,
+            link: `https://openlibrary.org${book.key}`,
+          };
+        });
+        setBooks(booksData);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  // return (
+  //   <StyledBookRecommendation>
+  //     <h1>Books</h1>
+  //     <div className="boxex-wrapper">
+  //       <StyledBox>
+  //         <img
+  //           src="https://plus.unsplash.com/premium_photo-1673264933445-0112f3cdcb2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+  //           alt=""
+  //         />
+  //         <div className="styled-box-wrapper">
+  //           <h2>Book Title</h2>
+  //           <p>
+  //             Written by: <span className="author-name"></span>
+  //           </p>
+
+  //           <button>See details</button>
+  //         </div>
+  //       </StyledBox>
+
+  //       <StyledBox>
+  //         <img
+  //           src="https://plus.unsplash.com/premium_photo-1673264933445-0112f3cdcb2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+  //           alt=""
+  //         />
+  //         <div className="styled-box-wrapper">
+  //           <h2>Book Title</h2>
+  //           <p>
+  //             Written by: <span className="author-name"></span>
+  //           </p>
+
+  //           <button>See details</button>
+  //         </div>
+  //       </StyledBox>
+
+  //       <StyledBox>
+  //         <img
+  //           src="https://plus.unsplash.com/premium_photo-1673264933445-0112f3cdcb2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+  //           alt=""
+  //         />
+  //         <div className="styled-box-wrapper">
+  //           <h2>Book Title</h2>
+  //           <p>
+  //             Written by: <span className="author-name"></span>
+  //           </p>
+
+  //           <button>See details</button>
+  //         </div>
+  //       </StyledBox>
+  //     </div>
+  //     <StyledSeeMoreBtn>
+  //       <button className="seeMoreBooks">See more books</button>
+  //     </StyledSeeMoreBtn>
+  //   </StyledBookRecommendation>
+  // );
+
   return (
     <StyledBookRecommendation>
       <h1>Books</h1>
       <div className="boxex-wrapper">
-        <StyledBox>
-          <img
-            src="https://plus.unsplash.com/premium_photo-1673264933445-0112f3cdcb2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-            alt=""
-          />
-          <div className="styled-box-wrapper">
-            <h2>Book Title</h2>
-            <p>
-              Written by: <span className="author-name"></span>
-            </p>
+        {books.map((book) => (
+          <StyledBox key={book.link}>
+            <img src={book.image} alt={`${book.title} book cover`} />
+            <div className="styled-box-wrapper">
+              <h2>{book.title}</h2>
+              <p>
+                Written by: <span className="author-name">{book.author}</span>
+              </p>
 
-            <button>See details</button>
-          </div>
-        </StyledBox>
-
-        <StyledBox>
-          <img
-            src="https://plus.unsplash.com/premium_photo-1673264933445-0112f3cdcb2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-            alt=""
-          />
-          <div className="styled-box-wrapper">
-            <h2>Book Title</h2>
-            <p>
-              Written by: <span className="author-name"></span>
-            </p>
-
-            <button>See details</button>
-          </div>
-        </StyledBox>
-
-        <StyledBox>
-          <img
-            src="https://plus.unsplash.com/premium_photo-1673264933445-0112f3cdcb2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
-            alt=""
-          />
-          <div className="styled-box-wrapper">
-            <h2>Book Title</h2>
-            <p>
-              Written by: <span className="author-name"></span>
-            </p>
-
-            <button>See details</button>
-          </div>
-        </StyledBox>
+              <a href={book.link} target="_blank" rel="noopener noreferrer">
+                <button>See details</button>
+              </a>
+            </div>
+          </StyledBox>
+        ))}
       </div>
       <StyledSeeMoreBtn>
-        <button className="seeMoreBooks">See more books</button>
+        <button className="seeMoreBooks">
+          <Link to="/books">See more books</Link>
+        </button>
       </StyledSeeMoreBtn>
     </StyledBookRecommendation>
   );
@@ -87,7 +139,7 @@ const StyledBox = styled.div`
   margin: 10px;
   width: 20%;
   text-align: center;
-  height: 100%;
+  height: 500px;
 
   img {
     height: 70%;
@@ -104,5 +156,10 @@ const StyledSeeMoreBtn = styled.div`
     padding: 10px 20px;
     font-size: 1rem;
     letter-spacing: 1px;
+  }
+
+  .seeMoreBooks a {
+    text-decoration: none;
+    color: #000;
   }
 `;

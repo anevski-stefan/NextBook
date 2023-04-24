@@ -16,11 +16,7 @@ public class Book {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private String Author;
-
-    @Column(nullable = false)
-    private String Author;
+    //TODO: ADD VARIABLE THAT STORES BOOK AUTHOR
 
     @Column(nullable = false)
     private String ISBN;
@@ -37,10 +33,10 @@ public class Book {
     @JoinColumn(name = "UserID", referencedColumnName = "UserId")
     private User donatedBy;
 
-    public Book(String bookName, String Author, String ISBN, String img, Category cat, User donor){
+    public Book(String bookName, String ISBN, String imagelink, Category cat, User donor){
         this.name = bookName;
         this.ISBN = ISBN;
-        this.imageLink = img;
+        this.imageLink = imagelink;
         this.category = cat;
         this.donatedBy = donor;
     }

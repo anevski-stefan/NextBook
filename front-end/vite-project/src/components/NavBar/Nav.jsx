@@ -1,23 +1,21 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 export function Nav() {
   return (
     <StyledNav>
-      <h1>SharedLibrary</h1>
+      <h1>Next Book</h1>
       <ul className="nav-menu">
         <li className="menu-link">
-          <a href="#books">Books</a>
+          <Link to="/">Home</Link>
         </li>
         <li className="menu-link">
-          <a href="#about-us">About us</a>
+          <Link to="/books">Books</Link>
         </li>
         <li className="menu-link">
-          <a href="#contact">Contact</a>
+          <Link to="/aboutus">About us</Link>
         </li>
         <li className="menu-link">
-          <a href="#log-in">Log In</a>
-        </li>
-        <li className="menu-link">
-          <a href="#sign-up">Sign up</a>
+          <Link to="/login">LogIn / Sign Up</Link>
         </li>
       </ul>
     </StyledNav>
@@ -38,8 +36,9 @@ const StyledNav = styled.nav`
     display: flex;
     list-style: none;
     width: 40%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 30px;
+    margin-right: 0;
   }
 
   .nav-menu li a {
