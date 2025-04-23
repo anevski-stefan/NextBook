@@ -1,53 +1,70 @@
-
 # NextBook
 
 NextBook is a free online platform that connects people within the community who share a common love for knowledge sharing. The idea behind NextBook is simple: sign up to the platform, lend a book out, and borrow a book to gain affordable, accessible education.
 
 This project was developed as part of Mega Hackathon 2023.
 
-
-
-
-
-
-
 ## Features
 
-- Fetch books from the OpenLibrary api
-- Fetch categories that are in the PostgreSQL Database
-- Nice popup for book details
+- Integration with OpenLibrary API for comprehensive book data
+- Category management with PostgreSQL Database
+- Interactive book detail popups
+- Responsive and modern user interface
+- User-friendly book browsing experience
 
+## Technologies Used
 
+NextBook is built using modern web technologies:
 
-## Technologies used
+### Frontend
+- React 18 with Vite for fast development and optimal production builds
+- React Router (v6) for seamless navigation
+- Styled-components for component-based styling
+- Axios for API communication
 
-NextBook was built using the following technologies:
+### Backend
+- Spring Boot for robust backend services
+- PostgreSQL for reliable data storage
+- RESTful API architecture
 
-- ReactJS - frontend development
-- Styled-components - designing 
-- PostgreSQL - database management
-- SpringBoot - backend development
-## Installation
+## Getting Started
 
-To get started with NextBook, follow these steps:
+To run NextBook locally, follow these steps:
 
-1. Clone the repository
-2. Run npm install to install all required dependencies
-3. Run npm run start to launch the application in development mode
-4. Navigate to http://localhost:5173/ in your web browser to access NextBook
+### Frontend Setup
+1. Navigate to the frontend directory:
+   ```bash
+   cd front-end/vite-project
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Access the application at `http://localhost:5173`
 
+### Backend Setup
+1. Ensure you have Java 11+ and PostgreSQL installed
+2. Configure your database connection in the application properties
+3. Run the Spring Boot application
 
-## Feature Plans
+## Feature Roadmap
 
-- User registration and authentication
-- Lend and borrow books with other users
-- Search for books by title, author, or genre
-- View borrowing history and pending requests
-- Rate and review books 
-- Admin view for analyzing engagement and impact of the platform
+- User authentication and authorization
+- Book lending and borrowing system
+- Advanced search functionality (by title, author, genre)
+- User profile management
+- Borrowing history tracking
+- Book ratings and reviews
+- Administrative dashboard for platform analytics
 
+## Contributing
 
+We welcome contributions to NextBook! Please feel free to submit issues and pull requests.
 
 ## License
 
-This project is licensed under the MIT license. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
